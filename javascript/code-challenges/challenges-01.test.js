@@ -46,7 +46,7 @@ const allUpperCase = (arr) => {
   // Solution code here...
   let newArray = []
   arr.forEach((string) => {
-    newArray.push(string.toUpper());
+    newArray.push(string.toUpperCase());
   });
   return newArray;
 };
@@ -99,7 +99,10 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-
+  for(let i = 0; i < times; i++){
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
