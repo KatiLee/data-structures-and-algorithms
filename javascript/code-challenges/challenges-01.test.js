@@ -73,6 +73,7 @@ const speaker = (words, callback) => {
   words.forEach((string) => {
     newArray.push(callback(string));
   });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,10 +94,12 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-};
+  arr.push(value);
+  };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,6 +122,14 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let groceryList = [];
+  availableItems.forEach((listItem) => {
+    let {name, available} = listItem;
+    if (available===true){
+      groceryList.push(name)
+    }
+  });
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
