@@ -8,6 +8,11 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
+  let addTwoArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    addTwoArray.push(arr[i] + 2)
+  };
+  return addTwoArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
