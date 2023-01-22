@@ -23,6 +23,8 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // Solution code here...
+  let newArray = arr.map(callback);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +37,8 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
+  let newArray = arr.sort();
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +51,8 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
+  let newArray = arr.sort((a, b) => a - b);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,6 +65,8 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => b - a);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
