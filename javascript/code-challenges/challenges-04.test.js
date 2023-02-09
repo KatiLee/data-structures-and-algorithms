@@ -115,7 +115,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 const alphabetizeBetter = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-    a.toLowerCase() > b.toLowerCase() ? : -1 a.toLowerCase() < b.toLowerCase() ? 1 : 0;
+   return a.toLowerCase().localeCompare(b.toLowerCase())
   });
 };
 
@@ -287,7 +287,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual([ 'alert', 'Alice', 'apple', 'Average' ]);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
