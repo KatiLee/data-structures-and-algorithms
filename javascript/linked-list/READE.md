@@ -5,7 +5,7 @@ Linked-List
 No whiteboard
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+If you run npm test, all the tests are passing. 
