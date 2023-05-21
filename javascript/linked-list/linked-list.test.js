@@ -28,7 +28,7 @@ describe('Linked List', () => {
     expect(list.head.next.value).toEqual(2);
     expect(list.head.next.next).toBeNull();
     list.append('a');
-    expect(lsit.head.next.next.value).toEqual('a');
+    expect(list.head.next.next.value).toEqual('a');
   });
 
 });
