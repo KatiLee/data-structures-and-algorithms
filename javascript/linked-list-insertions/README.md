@@ -5,8 +5,10 @@ Linked List Insertion
 ![linked-list-insertions-whiteboard](code-challenge-06-with-test.png)
 
 ## Approach & Efficiency
-We partnered up to get the whiteboard created faster.
+We started with the whiteboard to work through to a solution.
+
+## Collaborators
 Hayden Cooper and Joshua Coffey were my partners for this challenge.
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+![linked-list-insertions-test-passing](linked-list-insertion-test-pass.png)
