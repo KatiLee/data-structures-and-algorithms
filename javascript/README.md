@@ -6,8 +6,8 @@
 
 - [Array Binary Search](/array-binary-search/README.md)
 
-- []()
+- [Linked List](/linked-list/README.md)
 
-- []()
+- [Linked List Insertions](/linked-list-insertions/README.md)
 
 - []()
