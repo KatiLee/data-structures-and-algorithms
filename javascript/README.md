@@ -10,4 +10,4 @@
 
 - [Linked List Insertions](/linked-list-insertions/README.md)
 
-- [linked-list-kth](/linked-list-kth/README.md)
+- [linked list kth](/linked-list-kth/README.md)
