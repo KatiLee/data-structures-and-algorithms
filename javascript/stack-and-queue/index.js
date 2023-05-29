@@ -37,18 +37,18 @@ class Stack {
 }
 
 class Queue {
-    constructor(){
+    constructor() {
         this.front = null;
         this.back = null;
     }
     enqueue(value){
         let newNode = new Node(value);
         if(this.front){
-            this.back.next = NewNode
+            this.back.next = newNode;
         } else {
-            this.front = newNode
+            this.front = newNode;
         }
-        this.back = newNode
+        this.back = newNode;
     }
     dequeue(){
         let removedValue = null;
@@ -57,7 +57,7 @@ class Queue {
             if (this.front === this.back){
                 this.back = null;
             }
-            this.front = this.front.next
+            this.front = this.front.next;
         }
         return removedValue;
     }
