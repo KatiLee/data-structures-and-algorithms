@@ -63,7 +63,18 @@ describe ('Binary search trees', () => {
         const result = tree.postOrder();
         expect(result).toEqual([15, 12, 9, 6, 3]);
       });
-      
+
+    it('should return the maximum value in a search tree', () => {
+        const tree = new BinarySearchTree();
+        tree.add(10);
+        tree.add(5);
+        tree.add(15);
+        tree.add(2);
+        tree.add(7);
+        tree.add(20);
+        const maxValue = tree.findMaxValue();
+        expect(maxValue).toBe(20);
+      });
 
     it('should return true or false for the contains method', () => {
         const tree = new BinarySearchTree();

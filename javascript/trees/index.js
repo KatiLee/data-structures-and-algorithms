@@ -60,8 +60,34 @@ postOrder() {
     }
     return results;
   }
+
+  findMaxValue() {
+    if (!this.root) {
+      return null;
+    }
   
-}   
+    let maxValue = null;
+  
+    const traverse = (node) => {
+      if (node.value > maxValue) {
+        maxValue = node.value;
+      }
+  
+      if (node.left) {
+        traverse(node.left);
+      }
+      if (node.right) {
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+
+    return maxValue;
+  }
+  
+}  
+
+
 
 class BinarySearchTree extends Tree {
   constructor() {
