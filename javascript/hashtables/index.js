@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = ('./LinkedList');
+const LinkedList = require('./LinkedList/index');
 
 class HashTable {
     constructor(size) {
@@ -20,10 +20,11 @@ class HashTable {
 
     set(key, value) {
         let position = this.hash(key);
-        let data = { [key]: value }
-
-        this.buckets[position] = data;
-    }
+        if (!this.buckets[position]) {
+          this.buckets[position] = {};
+        }
+        this.buckets[position][key] = value;
+      }
 
     get(key) {
         let position = this.hash(key);
@@ -40,27 +41,32 @@ class HashTable {
     }
 
     keys() {
-        let results = this.buckets.reduce((keysArr, bucket) => {
-            if(bucket){
-                return [...keysArr, ...Object.keys(bucket)];
-            }
-        }, []);
-        return results;
-    }
+        let keysArr = [];
+        this.buckets.forEach(bucket => {
+          if (bucket) {
+            Object.keys(bucket).forEach(key => {
+              keysArr.push(key);
+            });
+          }
+        });
+        return keysArr;
+      }
 }
 
 const table = new HashTable(500);
 
-console.log('table:', table);
+module.exports = HashTable
 
-let hashOne = table.hash('Roary');
-let hashTwo = table.hash('Brigadier');
+// console.log('table:', table);
 
-table.set('Roary', 'is a kitty');
-table.set('Brigadier', 'will be my doggo');
+// let hashOne = table.hash('Roary');
+// let hashTwo = table.hash('Brigadier');
 
-console.log('get', table.get('Roary'));
-console.log('yah', table.has('Roary'));
-console.log('nah', table.has('Finn'));
-let keys = table.keys();
-console.log('keys: ', keys);
+// table.set('Roary', 'is a kitty');
+// table.set('Brigadier', 'will be my doggo');
+
+// console.log('get', table.get('Roary'));
+// console.log('yah', table.has('Roary'));
+// console.log('nah', table.has('Finn'));
+// let keys = table.keys();
+// console.log('keys: ', keys);
