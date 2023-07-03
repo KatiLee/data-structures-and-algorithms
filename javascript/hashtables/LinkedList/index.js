@@ -23,7 +23,7 @@ class LinkedList {
     append(value) {
         let node = new Node(value);
         if(!this.head) {
-            this.head = null;
+            this.head = node;
             return
         }
         let current = this.head
@@ -58,27 +58,35 @@ class LinkedList {
             current = current.next
         }
 
-        result=+ 'null';
+        result += 'null';
         return result;
     }
 
-    inserBefore(value, newValue) {
-        if(!this.head) throw new Error('The linked list is empty');
-        if(!this.head.value === value)this.insert(value);
-        if(!this.includes(value)) throw new Error('Value not found');
+    insertBefore(value, newValue) {
+  if (!this.head) {
+    this.insert(newValue);
+    return;
+  }
 
-        let current = this.head;
-        while(current) {
-            if(current.next && current.next.value === value) {
-                let newNode = new Node(newValue);
-                newNode.next = current.next;
-                current.next = newNode
-                current = current.next.next;
-            } else {
-                current = current.next;
-            }
-        }
+  if (this.head.value === value) {
+    this.insert(newValue);
+    return;
+  }
+
+  let current = this.head;
+  while (current) {
+    if (current.next && current.next.value === value) {
+      let newNode = new Node(newValue);
+      newNode.next = current.next;
+      current.next = newNode;
+      return;
     }
+    current = current.next;
+  }
+
+  throw new Error('Value not found');
+}
+
 }
 
 let list = new LinkedList();
@@ -87,6 +95,6 @@ list.append('b');
 list.append('c');
 list.append('d');
 
-list.inserBefore('c', 1);
+list.insertBefore('c', 1);
 
 module.exports = LinkedList
